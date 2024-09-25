@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7e6f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #login-form, #letter {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 600px;
+        }
+        #letter {
+            display: none;
+        }
+        h1 {
+            color: #b30086;
+        }
+        p {
+            color: #800060;
+        }
+        input[type="text"], input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #b30086;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #800060;
+        }
+        .heart {
+            font-size: 24px;
+            color: red;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+
+<div id="login-form">
+    <h1>Iniciar Sesión</h1>
+    <form onsubmit="return checkLogin()">
+        <input type="text" id="name" placeholder="Tu nombre"><br>
+        <input type="password" id="password" placeholder="Contraseña"><br>
+        <input type="submit" value="Ingresar">
+    </form>
+</div>
+
+<div id="letter">
+    <h1>Para ti, mi querida Zarela <span class="heart">❤️</span></h1>
+    <p>
+        Mi amor, Zarela,<br><br>
+        Desde el primer día que te vi, algo dentro de mí cambió para siempre. No hay suficientes palabras en este mundo para describir lo que siento por ti. 
+        Eres el sol que ilumina mi vida, la razón detrás de cada una de mis sonrisas, y mi más grande inspiración.<br><br>
+
+        A cada momento que paso contigo, mi corazón late más fuerte, como si supiera que a tu lado es donde realmente pertenece. <span class="heart">💖</span> 
+        Cada segundo a tu lado es un regalo que valoro más que cualquier cosa en este mundo. Me haces sentir completo, amado y más feliz de lo que jamás pensé posible.<br><br>
+
+        He soñado con compartir mi vida contigo, crear un futuro lleno de risas, aventuras y amor. Quiero recorrer el mundo, no solo explorando nuevos lugares, sino explorando cada rincón de tu corazón. 
+        Prometo estar a tu lado en los buenos y malos momentos, apoyarte en todo lo que hagas, y amarte con todo lo que soy, todos los días de mi vida.<br><br>
+
+        Mi amor por ti es inmenso, tan profundo y vasto como el océano. <span class="heart">💓</span> Quiero que sepas que siempre estaré aquí para ti, como tu compañero, tu confidente y tu mayor fan. 
+        Gracias por ser la persona increíble que eres. Te amo más allá de las palabras, más allá del tiempo y más allá de lo que nuestros corazones puedan imaginar.<br><br>
+
+        Para siempre tuyo, con todo mi amor.<br>
+        [Tu nombre]<br><br>
+
+        <span class="heart">💘💘💘</span>
+    </p>
+</div>
+
+<script>
+    function checkLogin() {
+        const name = document.getElementById('name').value;
+        const password = document.getElementById('password').value;
+
+        if (name === "Zarela" && password === "101219") {
+            document.getElementById('login-form').style.display = "none";
+            document.getElementById('letter').style.display = "block";
+        } else {
+            alert("Nombre o contraseña incorrectos. Inténtalo de nuevo.");
+        }
+        return false; // Evita que el formulario se envíe
+    }
+</script>
+
+</body>
+</html>
